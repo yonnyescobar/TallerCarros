@@ -46,6 +46,25 @@ namespace Servicios.Clases
 			return dbTallerCarros.Vehiculos.FirstOrDefault(e => e.placa == placa);
 		}
 
+		public IQueryable ConsultarVehiculos()
+		{
+			return from V in dbTallerCarros.Set<Vehiculo>()
+				   join Cl in dbTallerCarros.Set<Cliente>()
+				   on V.id_cliente equals Cl.id_cliente
+				   join MV in dbTallerCarros.Set<MarcasVehiculo>()
+				   on V.id_marca equals MV.id_marca
+				   orderby MV.nombre ascending
+				   select new
+				   {
+					   Marca = MV.nombre,
+					   Modelo = V.modelo,
+					   Año = V.ano,
+					   Placa = V.placa,
+					   Cliente = Cl.nombre + " " + Cl.apellido
+				   };
+				   
+		}
+
 		public string Eliminar()
 		{
 			try
