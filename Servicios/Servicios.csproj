@@ -184,6 +184,7 @@
     <Compile Include="Clases\clsCliente.cs" />
     <Compile Include="Clases\clsEmpleado.cs" />
     <Compile Include="Controllers\ClientesController.cs" />
+    <Compile Include="Controllers\EmpleadosController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ValuesController.cs" />
     <Compile Include="Global.asax.cs">
