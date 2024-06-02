@@ -201,6 +201,7 @@
     <Content Include="Paginas\lib\waypoints\waypoints.min.js" />
     <Content Include="Paginas\lib\wow\wow.js" />
     <Content Include="Paginas\lib\wow\wow.min.js" />
+    <Content Include="Paginas\Scripts\Cliente.js" />
     <Content Include="Paginas\service.html" />
     <Content Include="Paginas\team.html" />
     <Content Include="Paginas\testimonial.html" />
