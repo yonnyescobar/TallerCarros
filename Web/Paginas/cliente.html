@@ -14,7 +14,7 @@
     <!-- Google Web Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Barlow:wght@600;700&family=Ubuntu:wght@400;500&display=swap" rel="stylesheet"> 
+    <link href="https://fonts.googleapis.com/css2?family=Barlow:wght@600;700&family=Ubuntu:wght@400;500&display=swap" rel="stylesheet">
 
     <!-- Icon Font Stylesheet -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
@@ -40,8 +40,6 @@
         </div>
     </div>
     <!-- Spinner End -->
-
-
     <!-- Topbar Start -->
     <div class="container-fluid bg-light p-0">
         <div class="row gx-0 d-none d-lg-flex">
@@ -70,8 +68,6 @@
         </div>
     </div>
     <!-- Topbar End -->
-
-
     <!-- Navbar Start -->
     <nav class="navbar navbar-expand-lg bg-white navbar-light shadow sticky-top p-0">
         <a href="index.html" class="navbar-brand d-flex align-items-center px-4 px-lg-5">
@@ -100,26 +96,109 @@
         </div>
     </nav>
     <!-- Navbar End -->
-
-
     <!-- Page Header Start -->
     <div class="container-fluid page-header mb-5 p-0" style="background-image: url(img/carousel-bg-1.jpg);">
         <div class="container-fluid page-header-inner py-5">
             <div class="container text-center">
-                <h1 class="display-3 text-white mb-3 animated slideInDown">Booking</h1>
-                <nav aria-label="breadcrumb">
-                    <ol class="breadcrumb justify-content-center text-uppercase">
-                        <li class="breadcrumb-item"><a href="#">Home</a></li>
-                        <li class="breadcrumb-item"><a href="#">Pages</a></li>
-                        <li class="breadcrumb-item text-white active" aria-current="page">Booking</li>
-                    </ol>
-                </nav>
+                <h1 class="display-3 text-white mb-3 animated slideInDown">Clientes</h1>
             </div>
         </div>
     </div>
     <!-- Page Header End -->
-
-
+    <!-- Form Client Start -->
+    <form id="frmClientes">
+        <div class="card-body">
+            <div class="card card-gray-dark">
+                <div class="card-header">
+                    <h3 class="card-title">Información del cliente</h3>
+                </div>
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col-md-4">
+                            <div class="form-group">
+                                <label for="txtdocumento">Documento</label>
+                                <input type="text" class="form-control" id="txtdocumento">
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="form-group">
+                                <label for="txtnombre">Nombre</label>
+                                <input type="text" class="form-control" id="txtnombre">
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="form-group">
+                                <label for="txtapellido">Apellido</label>
+                                <input type="text" class="form-control" id="txtapellido">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-4">
+                            <div class="form-group">
+                                <label for="txttelefono">Teléfono</label>
+                                <input type="text" class="form-control" id="txttelefono">
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="form-group">
+                                <label for="txtemail">Correo electrónico</label>
+                                <input type="text" class="form-control" id="txtemail">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="card card-danger">
+                <div class="card-header">
+                    <h3 class="card-title">Gestión</h3>
+                </div>
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col-md-3">
+                            <br />
+                            <button type="button" id="btnInsertar" class="btn-block btn-lg btn-primary">Insertar</button>
+                        </div>
+                        <div class="col-md-3">
+                            <br />
+                            <button type="button" id="btnActualizar" class="btn-block btn-lg btn-primary">Actualizar</button>
+                        </div>
+                        <div class="col-md-3">
+                            <br />
+                            <button type="button" id="btnEliminar" class="btn-block btn-lg btn-primary">Eliminar</button>
+                        </div>
+                        <div class="col-md-3">
+                            <br />
+                            <button type="button" id="btnConsultar" class="btn-block btn-lg btn-primary">Consultar</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="card-footer">
+            <div class="row">
+                <div class="col-md-12">
+                    <div id="dvMensaje" class=""></div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12">
+                    <table id="tblClientes" class="table table-bordered table-striped" style="width:100%;">
+                        <thead>
+                            <tr>
+                                <th>Documento</th>
+                                <th>Nombre</th>
+                                <th>Apellido</th>
+                                <th>Telefono</th>
+                                <th>Correo electónico</th>
+                            </tr>
+                        </thead>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </form>
+    <!-- Form Client End -->
     <!-- Service Start -->
     <div class="container-xxl py-5">
         <div class="container">
@@ -158,8 +237,6 @@
         </div>
     </div>
     <!-- Service End -->
-
-
     <!-- Booking Start -->
     <div class="container-fluid bg-secondary booking my-5 wow fadeInUp" data-wow-delay="0.1s">
         <div class="container">
@@ -192,8 +269,8 @@
                                 <div class="col-12 col-sm-6">
                                     <div class="date" id="date1" data-target-input="nearest">
                                         <input type="text"
-                                            class="form-control border-0 datetimepicker-input"
-                                            placeholder="Service Date" data-target="#date1" data-toggle="datetimepicker" style="height: 55px;">
+                                               class="form-control border-0 datetimepicker-input"
+                                               placeholder="Service Date" data-target="#date1" data-toggle="datetimepicker" style="height: 55px;">
                                     </div>
                                 </div>
                                 <div class="col-12">
@@ -210,8 +287,6 @@
         </div>
     </div>
     <!-- Booking End -->
-
-
     <!-- Call To Action Start -->
     <div class="container-xxl py-5 wow fadeInUp" data-wow-delay="0.1s">
         <div class="container">
@@ -231,8 +306,6 @@
         </div>
     </div>
     <!-- Call To Action End -->
-
-
     <!-- Footer Start -->
     <div class="container-fluid bg-dark text-light footer pt-5 mt-5 wow fadeIn" data-wow-delay="0.1s">
         <div class="container py-5">
@@ -296,8 +369,6 @@
         </div>
     </div>
     <!-- Footer End -->
-
-
     <!-- Back to Top -->
     <a href="#" class="btn btn-lg btn-primary btn-lg-square back-to-top"><i class="bi bi-arrow-up"></i></a>
 
@@ -316,6 +387,10 @@
 
     <!-- Template Javascript -->
     <script src="js/main.js"></script>
+    <script src="../Scripts/jquery-3.4.1.min.js"></script>
+    <script src="../Scripts/bootstrap.bundle.min.js"></script>
+    <script src="../Scripts/jquery.dataTables.min.js"></script>
+    <script src="../Scripts/dataTables.bootstrap4.min.js"></script>
 </body>
 
 </html>
