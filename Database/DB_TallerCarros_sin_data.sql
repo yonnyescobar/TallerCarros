@@ -9,7 +9,7 @@ GO
 -- Tabla Clientes
 CREATE TABLE Clientes (
     id_cliente INT PRIMARY KEY IDENTITY(1,1),
-    documento NVARCHAR(20) UNIQUE NOT NULL,
+    documento NVARCHAR(20) NOT NULL,
     nombre NVARCHAR(50) NOT NULL,
     apellido NVARCHAR(50) NOT NULL,
     telefono NVARCHAR(15) NOT NULL,
@@ -45,7 +45,7 @@ GO
 -- Tabla Empleados
 CREATE TABLE Empleados (
     id_empleado INT PRIMARY KEY IDENTITY(1,1),
-    documento NVARCHAR(20) UNIQUE NOT NULL,
+    documento NVARCHAR(20) NOT NULL,
     nombre NVARCHAR(50) NOT NULL,
     apellido NVARCHAR(50) NOT NULL,
     telefono NVARCHAR(15) NOT NULL,
@@ -151,12 +151,12 @@ GO
 -- Tabla Visitas
 CREATE TABLE Visitas (
     id_visita INT PRIMARY KEY IDENTITY(1,1),
-    id_cliente INT FOREIGN KEY REFERENCES Clientes(id_cliente),
-    id_vehiculo INT FOREIGN KEY REFERENCES Vehiculos(id_vehiculo),
-    id_empleado INT FOREIGN KEY REFERENCES Empleados(id_empleado),
     id_servicio INT FOREIGN KEY REFERENCES Servicios(id_servicio),
-    fecha DATE NOT NULL,
-    hora TIME NOT NULL,
-    descripcion NVARCHAR(255)
+    documento NVARCHAR(20) NOT NULL,
+    nombre NVARCHAR(50) NOT NULL,
+    apellido NVARCHAR(50) NOT NULL,
+    telefono NVARCHAR(15) NOT NULL,
+    email NVARCHAR(100) NOT NULL,
+    fecha DATETIME NOT NULL
 );
 GO
