@@ -204,6 +204,7 @@
     <Content Include="Paginas\Scripts\Cliente.js" />
     <Content Include="Paginas\Scripts\Empleado.js" />
     <Content Include="Paginas\Scripts\Vehiculo.js" />
+    <Content Include="Paginas\Scripts\Visita.js" />
     <Content Include="Paginas\service.html" />
     <Content Include="Paginas\empleado.html" />
     <Content Include="Paginas\vehiculo.html" />
