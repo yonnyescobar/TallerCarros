@@ -82,7 +82,7 @@ async function Consultar() {
         $("#txtapellido").val(Resultado.apellido);
         $("#txttelefono").val(Resultado.telefono);
         $("#txtemail").val(Resultado.email);
-        $("#cboCargo").val(Resultado.nombre);
+        $("#cboCargo").val(Resultado.id_cargo);
 
     }
     catch (error) {
