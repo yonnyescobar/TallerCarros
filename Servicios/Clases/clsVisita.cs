@@ -37,16 +37,14 @@ namespace Servicios.Clases
 				   on Ve.id_marca equals Mv.id_marca
 				   join Em in dbTallerCarros.Set<Empleado>()
 				   on Vi.id_empleado equals Em.id_empleado
-				   join Vr in dbTallerCarros.Set<Visitas_Reparaciones>()
-				   on Vi.id_visita equals Vr.id_visita
-				   join Re in dbTallerCarros.Set<Reparacione>()
-				   on Vr.id_reparacion equals Re.id_reparacion
+				   join Se in dbTallerCarros.Set<Servicio>()
+				   on Vi.id_servicio equals Se.id_servicio
 				   orderby Vi.fecha ascending
 				   select new
 				   {
 					   Cliente = Cl.nombre,
 					   Vehiculo = Mv.nombre,
-					   Servicio = Re.descripcion,
+					   Servicio = Se.nombre,
 					   Empleado = Em.nombre + " " + Em.apellido,
 					   Fecha = Vi.fecha,
 					   Hora = Vi.hora

@@ -198,9 +198,6 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Models\Asignacione.cs">
-      <DependentUpon>TallerCarros.tt</DependentUpon>
-    </Compile>
     <Compile Include="Models\Cargo.cs">
       <DependentUpon>TallerCarros.tt</DependentUpon>
     </Compile>
@@ -234,13 +231,13 @@
     <Compile Include="Models\Proveedore.cs">
       <DependentUpon>TallerCarros.tt</DependentUpon>
     </Compile>
-    <Compile Include="Models\Reparacione.cs">
-      <DependentUpon>TallerCarros.tt</DependentUpon>
-    </Compile>
     <Compile Include="Models\Repuesto.cs">
       <DependentUpon>TallerCarros.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\Repuestos_Categorias.cs">
+      <DependentUpon>TallerCarros.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Servicio.cs">
       <DependentUpon>TallerCarros.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\TallerCarros.Context.cs">
@@ -267,9 +264,6 @@
     <Compile Include="Models\Visita.cs">
       <DependentUpon>TallerCarros.tt</DependentUpon>
     </Compile>
-    <Compile Include="Models\Visitas_Reparaciones.cs">
-      <DependentUpon>TallerCarros.tt</DependentUpon>
-    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -294,8 +288,8 @@
     <Content Include="Global.asax" />
     <Content Include="Models\TallerCarros.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <LastGenOutput>TallerCarros.Context.cs</LastGenOutput>
       <DependentUpon>TallerCarros.edmx</DependentUpon>
+      <LastGenOutput>TallerCarros.Context.cs</LastGenOutput>
     </Content>
     <Content Include="Models\TallerCarros.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
