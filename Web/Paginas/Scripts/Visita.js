@@ -14,15 +14,13 @@
     $("#btnConsultar").on("click", function () {
         Consultar();
     });
-    LlenarClientes();
-    LlenarVehiculo();
-    LlenarEmpleado();
+    LlenarServicios();
     LlenarTabla();
 });
 
-async function LlenarClientes() {
+async function LlenarServicios() {
     try {
-        const Respuesta = await fetch("http://localhost:50046/api/Clientes",
+        const Respuesta = await fetch("http://localhost:50046/api/Servicios",
             {
                 method: "GET",
                 mode: "cors",
@@ -30,7 +28,7 @@ async function LlenarClientes() {
             });
         const Resultado = await Respuesta.json();
         for (i = 0; i < Resultado.length; i++) {
-            $("#cboCliente").append('<option value="' + Resultado[i].id_cliente + '">' + Resultado[i].nombre + " " + Resultado[i].apellido + '</option >');
+            $("#cboServicio").append('<option value="' + Resultado[i].id_servicio + '">' + Resultado[i].nombre + '</option >');
         }
 
     }
@@ -39,40 +37,38 @@ async function LlenarClientes() {
     }
 }
 
-async function LlenarVehiculo() {
+async function EjecutarComando(Comando) {
+    let servicio = $("#cboServicio").val();
+    let documento = $("#txdocumento").val();
+    let nombre = $("#txtnombre").val();
+    let apellido = $("#txtapellido").val();
+    let telefono = $("#txttelefono").val();
+    let email = $("#txtemail").val();
+    let fecha = $("#txtfecha").val();
+
+    let DatosVisita = {
+        id_servicio: servicio,
+        documento: documento,
+        nombre: nombre,
+        apellido: apellido,
+        telefono: telefono,
+        email: email,
+        fecha: fecha
+    }
+
     try {
-        const Respuesta = await fetch("http://localhost:50046/api/Vehiculos",
+        const Respuesta = await fetch("http://localhost:50046/api/Visitas",
             {
-                method: "GET",
+                method: Comando,
                 mode: "cors",
-                headers: { "Content-Type": "application/json" }
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify(DatosVisita)
             });
         const Resultado = await Respuesta.json();
-        for (i = 0; i < Resultado.length; i++) {
-            $("#cboVehiculo").append('<option value="' + Resultado[i].id_vehiculo + '">' + Resultado[i].placa + '</option >');
-        }
-
+        $("#dvMensaje").html(Resultado);
     }
     catch (error) {
         $("#dvMensaje").html(error);
     }
 }
 
-async function LlenarEmpleado() {
-    try {
-        const Respuesta = await fetch("http://localhost:50046/api/Empleados",
-            {
-                method: "GET",
-                mode: "cors",
-                headers: { "Content-Type": "application/json" }
-            });
-        const Resultado = await Respuesta.json();
-        for (i = 0; i < Resultado.length; i++) {
-            $("#cboEmpleado").append('<option value="' + Resultado[i].id_empleado + '">' + Resultado[i].nombre + " " + Resultado[i].apellido + '</option >');
-        }
-
-    }
-    catch (error) {
-        $("#dvMensaje").html(error);
-    }
-}

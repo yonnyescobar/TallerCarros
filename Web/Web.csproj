@@ -124,7 +124,7 @@
     <Content Include="Default.aspx" />
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
-    <Content Include="Paginas\404.html" />
+    <Content Include="Paginas\citas.html" />
     <Content Include="Paginas\about.html" />
     <Content Include="Paginas\cliente.html" />
     <Content Include="Paginas\contact.html" />
