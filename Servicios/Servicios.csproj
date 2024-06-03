@@ -185,6 +185,7 @@
     <Compile Include="Clases\clsCliente.cs" />
     <Compile Include="Clases\clsEmpleado.cs" />
     <Compile Include="Clases\clsMarcaVehiculo.cs" />
+    <Compile Include="Clases\clsServicio.cs" />
     <Compile Include="Clases\clsVehiculo.cs" />
     <Compile Include="Clases\clsVisita.cs" />
     <Compile Include="Controllers\CargosController.cs" />
@@ -192,6 +193,7 @@
     <Compile Include="Controllers\EmpleadosController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\MarcaVehiculosController.cs" />
+    <Compile Include="Controllers\ServiciosController.cs" />
     <Compile Include="Controllers\ValuesController.cs" />
     <Compile Include="Controllers\VehiculosController.cs" />
     <Compile Include="Controllers\VisitasController.cs" />
