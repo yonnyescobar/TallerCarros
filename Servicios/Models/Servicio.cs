@@ -9,7 +9,8 @@
 
 namespace Servicios.Models
 {
-    using System;
+	using Newtonsoft.Json;
+	using System;
     using System.Collections.Generic;
     
     public partial class Servicio
@@ -25,6 +26,7 @@ namespace Servicios.Models
         public decimal costo { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Visita> Visitas { get; set; }
+		[JsonIgnore]
+		public virtual ICollection<Visita> Visitas { get; set; }
     }
 }

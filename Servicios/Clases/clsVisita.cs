@@ -26,6 +26,11 @@ namespace Servicios.Clases
 			}
 		}
 
+		public Visita Consultar(string documento)
+		{
+			return dbTallerCarros.Visitas.FirstOrDefault(e => e.documento == documento);
+		}
+
 		public IQueryable ConsultarVisitas()
 		{
 			return from Vi in dbTallerCarros.Set<Visita>()
@@ -41,6 +46,22 @@ namespace Servicios.Clases
 					   Correo = Vi.email,
 					   Fecha = Vi.fecha
 				   };
+		}
+
+		public string Eliminar()
+		{
+			try
+			{
+				Visita _visita = Consultar(visita.documento);
+				dbTallerCarros.Visitas.Remove(_visita);
+				dbTallerCarros.SaveChanges();
+				return "Se canceló la cita para el: " + visita.fecha + " correctamente";
+
+			}
+			catch (Exception ex)
+			{
+				return ex.Message;
+			}
 		}
 	}
 }

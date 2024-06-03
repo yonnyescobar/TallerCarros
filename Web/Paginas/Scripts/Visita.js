@@ -37,6 +37,32 @@ async function LlenarServicios() {
     }
 }
 
+async function Consultar() {
+
+    let placa = $("#txtdocumento").val();
+
+    try {
+        const Respuesta = await fetch("http://localhost:50046/api/Visitas?documento=" + placa,
+            {
+                method: "GET",
+                mode: "cors",
+                headers: { "Content-Type": "application/json" }
+            });
+        const Resultado = await Respuesta.json();
+        $("#cboServicio").val(Resultado.id_servicio);
+        $("#txdocumento").val(Resultado.documento);
+        $("#txtnombre").val(Resultado.nombre);
+        $("#txtapellido").val(Resultado.apellido);
+        $("#txttelefono").val(Resultado.telefono);
+        $("#txtemail").val(Resultado.email);
+        $("#txtfecha").val(Resultado.fecha);
+
+    }
+    catch (error) {
+        $("#dvMensaje").html(error);
+    }
+}
+
 async function EjecutarComando(Comando) {
     let servicio = $("#cboServicio").val();
     let documento = $("#txdocumento").val();
