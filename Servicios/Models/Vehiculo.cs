@@ -9,7 +9,8 @@
 
 namespace Servicios.Models
 {
-    using System;
+	using Newtonsoft.Json;
+	using System;
     using System.Collections.Generic;
     
     public partial class Vehiculo
@@ -31,8 +32,10 @@ namespace Servicios.Models
         public virtual Cliente Cliente { get; set; }
         public virtual MarcasVehiculo MarcasVehiculo { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Reparacione> Reparaciones { get; set; }
+		[JsonIgnore]
+		public virtual ICollection<Reparacione> Reparaciones { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Visita> Visitas { get; set; }
+		[JsonIgnore]
+		public virtual ICollection<Visita> Visitas { get; set; }
     }
 }
