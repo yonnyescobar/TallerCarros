@@ -35,16 +35,6 @@ CREATE TABLE Vehiculos (
 );
 GO
 
--- Tabla Reparaciones
-CREATE TABLE Reparaciones (
-    id_reparacion INT PRIMARY KEY IDENTITY(1,1),
-    descripcion NVARCHAR(255) NOT NULL,
-    costo DECIMAL(10, 2) NOT NULL,
-    fecha DATE NOT NULL,
-    id_vehiculo INT FOREIGN KEY REFERENCES Vehiculos(id_vehiculo)
-);
-GO
-
 -- Tabla Cargos
 CREATE TABLE Cargos (
     id_cargo INT PRIMARY KEY IDENTITY(1,1),
@@ -61,14 +51,6 @@ CREATE TABLE Empleados (
     telefono NVARCHAR(15) NOT NULL,
     email NVARCHAR(100) NOT NULL,
     id_cargo INT FOREIGN KEY REFERENCES Cargos(id_cargo)
-);
-GO
-
--- Tabla Asignaciones
-CREATE TABLE Asignaciones (
-    id_asignacion INT PRIMARY KEY IDENTITY(1,1),
-    id_empleado INT FOREIGN KEY REFERENCES Empleados(id_empleado),
-    id_reparacion INT FOREIGN KEY REFERENCES Reparaciones(id_reparacion)
 );
 GO
 
@@ -158,22 +140,23 @@ CREATE TABLE MarcasRepuestos (
 );
 GO
 
+-- Tabla Servicios
+CREATE TABLE Servicios (
+    id_servicio INT PRIMARY KEY IDENTITY(1,1),
+    nombre NVARCHAR(100) NOT NULL,
+    costo DECIMAL(10, 2) NOT NULL
+);
+GO
+
 -- Tabla Visitas
 CREATE TABLE Visitas (
     id_visita INT PRIMARY KEY IDENTITY(1,1),
     id_cliente INT FOREIGN KEY REFERENCES Clientes(id_cliente),
     id_vehiculo INT FOREIGN KEY REFERENCES Vehiculos(id_vehiculo),
     id_empleado INT FOREIGN KEY REFERENCES Empleados(id_empleado),
+    id_servicio INT FOREIGN KEY REFERENCES Servicios(id_servicio),
     fecha DATE NOT NULL,
     hora TIME NOT NULL,
     descripcion NVARCHAR(255)
-);
-GO
-
--- Tabla Visitas_Reparaciones
-CREATE TABLE Visitas_Reparaciones (
-    id_visita_reparacion INT PRIMARY KEY IDENTITY(1,1),
-    id_visita INT FOREIGN KEY REFERENCES Visitas(id_visita),
-    id_reparacion INT FOREIGN KEY REFERENCES Reparaciones(id_reparacion)
 );
 GO
