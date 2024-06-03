@@ -200,72 +200,6 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Models\Cargo.cs">
-      <DependentUpon>TallerCarros.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\CategoriasRepuesto.cs">
-      <DependentUpon>TallerCarros.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\Cliente.cs">
-      <DependentUpon>TallerCarros.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\Compra.cs">
-      <DependentUpon>TallerCarros.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\DetalleCompra.cs">
-      <DependentUpon>TallerCarros.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\DetalleVenta.cs">
-      <DependentUpon>TallerCarros.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\Empleado.cs">
-      <DependentUpon>TallerCarros.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\Inventario.cs">
-      <DependentUpon>TallerCarros.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\MarcasRepuesto.cs">
-      <DependentUpon>TallerCarros.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\MarcasVehiculo.cs">
-      <DependentUpon>TallerCarros.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\Proveedore.cs">
-      <DependentUpon>TallerCarros.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\Repuesto.cs">
-      <DependentUpon>TallerCarros.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\Repuestos_Categorias.cs">
-      <DependentUpon>TallerCarros.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\Servicio.cs">
-      <DependentUpon>TallerCarros.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\TallerCarros.Context.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>TallerCarros.Context.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\TallerCarros.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>TallerCarros.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\TallerCarros.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>TallerCarros.edmx</DependentUpon>
-    </Compile>
-    <Compile Include="Models\Vehiculo.cs">
-      <DependentUpon>TallerCarros.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\Venta.cs">
-      <DependentUpon>TallerCarros.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\Visita.cs">
-      <DependentUpon>TallerCarros.tt</DependentUpon>
-    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -288,16 +222,6 @@
     <Content Include="Content\bootstrap.rtl.min.css" />
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
-    <Content Include="Models\TallerCarros.Context.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>TallerCarros.edmx</DependentUpon>
-      <LastGenOutput>TallerCarros.Context.cs</LastGenOutput>
-    </Content>
-    <Content Include="Models\TallerCarros.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>TallerCarros.edmx</DependentUpon>
-      <LastGenOutput>TallerCarros.cs</LastGenOutput>
-    </Content>
     <Content Include="Scripts\bootstrap.bundle.js" />
     <Content Include="Scripts\bootstrap.bundle.min.js" />
     <Content Include="Scripts\bootstrap.esm.js" />
@@ -323,13 +247,6 @@
     <Content Include="Areas\HelpPage\Views\Help\DisplayTemplates\CollectionModelDescription.cshtml" />
     <Content Include="Areas\HelpPage\Views\Help\DisplayTemplates\ApiGroup.cshtml" />
     <Content Include="Areas\HelpPage\Views\Help\Api.cshtml" />
-    <EntityDeploy Include="Models\TallerCarros.edmx">
-      <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>TallerCarros.Designer.cs</LastGenOutput>
-    </EntityDeploy>
-    <Content Include="Models\TallerCarros.edmx.diagram">
-      <DependentUpon>TallerCarros.edmx</DependentUpon>
-    </Content>
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.4.1.js" />
     <Content Include="Scripts\jquery-3.4.1.min.js" />
@@ -353,6 +270,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Models\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Scripts\bootstrap.min.js.map" />
