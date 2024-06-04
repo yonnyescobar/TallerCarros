@@ -37,6 +37,36 @@ async function LlenarServicios() {
     }
 }
 
+async function LlenarTabla() {
+    try {
+        const Respuesta = await fetch("http://localhost:50046/api/Visitas",
+            {
+                method: "GET",
+                mode: "cors",
+                headers: { "Content-Type": "application/json" }
+            });
+        const Resultado = await Respuesta.json();
+        var Columnas = [];
+        NombreColumnas = Object.keys(Resultado[0]);
+        for (var i in NombreColumnas) {
+            Columnas.push({
+                data: NombreColumnas[i],
+                title: NombreColumnas[i]
+            });
+        }
+
+        $("#tblVisitas").DataTable({
+            data: Resultado,
+            columns: Columnas,
+            destroy: true
+        });
+    }
+    catch (error) {
+        $("#dvMensaje").html(error);
+    }
+
+}
+
 async function Consultar() {
 
     let placa = $("#txtdocumento").val();
