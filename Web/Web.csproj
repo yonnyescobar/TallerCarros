@@ -124,7 +124,8 @@
     <Content Include="Default.aspx" />
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
-    <Content Include="Paginas\citas.html" />
+    <Content Include="Paginas\citasconsulta.html" />
+    <Content Include="Paginas\citasagenda.html" />
     <Content Include="Paginas\about.html" />
     <Content Include="Paginas\cliente.html" />
     <Content Include="Paginas\contact.html" />
