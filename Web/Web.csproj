@@ -204,6 +204,7 @@
     <Content Include="Paginas\lib\wow\wow.min.js" />
     <Content Include="Paginas\Scripts\Cliente.js" />
     <Content Include="Paginas\Scripts\Empleado.js" />
+    <Content Include="Paginas\Scripts\Servicio.js" />
     <Content Include="Paginas\Scripts\Vehiculo.js" />
     <Content Include="Paginas\Scripts\Visita.js" />
     <Content Include="Paginas\service.html" />
