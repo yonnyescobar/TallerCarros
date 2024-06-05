@@ -61,7 +61,7 @@ namespace Servicios.Clases
 				Servicio _servicio = Consultar(servicio.id_servicio);
 				dbTallerCarros.Servicios.Remove(_servicio);
 				dbTallerCarros.SaveChanges();
-				return "Se eliminó el vehículo de placa: " + servicio.nombre + " correctamente";
+				return "Se eliminó el Servicio: " + servicio.nombre + " correctamente";
 
 			}
 			catch (Exception ex)

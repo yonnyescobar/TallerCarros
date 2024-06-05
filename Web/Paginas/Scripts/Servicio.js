@@ -49,7 +49,7 @@ async function LlenarTabla() {
 
 async function Consultar() {
 
-    let placa = $("#txtplaca").val();
+    let placa = $("#txtid_servicio").val();
 
     try {
         const Respuesta = await fetch("http://localhost:50046/api/Servicios?id_servicio=" + id_servicio,

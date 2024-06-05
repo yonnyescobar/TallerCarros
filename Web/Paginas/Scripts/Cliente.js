@@ -14,6 +14,7 @@
     $("#btnConsultar").on("click", function () {
         Consultar();
     });
+    LlenarTabla();
 });
 
 async function Consultar() {
@@ -37,6 +38,36 @@ async function Consultar() {
     catch (error) {
         $("#dvMensaje").html(error);
     }
+}
+
+async function LlenarTabla() {
+    try {
+        const Respuesta = await fetch("http://localhost:50046/api/Clientes",
+            {
+                method: "GET",
+                mode: "cors",
+                headers: { "Content-Type": "application/json" }
+            });
+        const Resultado = await Respuesta.json();
+        var Columnas = [];
+        NombreColumnas = Object.keys(Resultado[0]);
+        for (var i in NombreColumnas) {
+            Columnas.push({
+                data: NombreColumnas[i],
+                title: NombreColumnas[i]
+            });
+        }
+
+        $("#tblClientes").DataTable({
+            data: Resultado,
+            columns: Columnas,
+            destroy: true
+        });
+    }
+    catch (error) {
+        $("#dvMensaje").html(error);
+    }
+
 }
 
 async function EjecutarComando(Comando) {

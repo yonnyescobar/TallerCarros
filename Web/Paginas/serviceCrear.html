@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="utf-8">
-    <title>Citas</title>
+    <title>Servicios</title>
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
     <meta content="" name="keywords">
     <meta content="" name="description">
@@ -95,39 +95,59 @@
     <div class="container-fluid page-header mb-5 p-0" style="background-image: url(img/carousel-bg-2.jpg);">
         <div class="container-fluid page-header-inner py-5">
             <div class="container text-center">
-                <h1 class="display-3 text-white mb-3 animated slideInDown">Citas</h1>
+                <h1 class="display-3 text-white mb-3 animated slideInDown">Servicios</h1>
             </div>
         </div>
     </div>
     <!-- Page Header End -->
-    <!-- Form Visit Start -->
-    <form id="frmVisitas">
+    <!-- Form Empleado Start -->
+    <form id="frmEmpleados">
         <div class="card-body">
             <div class="card card-gray-dark">
                 <div class="card-header">
-                    <h3 class="card-title">Consultar cita</h3>
+                    <h3 class="card-title">Información de Servicios</h3>
                 </div>
                 <div class="card-body">
                     <div class="row">
                         <div class="col-md-4">
                             <div class="form-group">
-                                <label for="txtdocumento">Documento</label>
-                                <input type="text" class="form-control" id="txtdocumento">
-                                
+                                <label for="txtnombre">Nombre</label>
+                                <input type="text" class="form-control" id="txtnombre">
                             </div>
                         </div>
                         <div class="col-md-4">
                             <div class="form-group">
-                                <button type="button" id="btnConsultar" class="btn btn-secondary w-40 py-2">Consultar</button>
+                                <label for="txtcosto">Costo</label>
+                                <input type="text" class="form-control" id="txtcosto">
                             </div>
-                        </div>
-                        <div class="col-md-3">
-                            <button type="button" id="btnEliminar" class="btn btn-secondary w-40 py-2">Cancelar</button>
                         </div>
                     </div>
                 </div>
             </div>
             <div class="card card-danger">
+                <div class="card-header">
+                    <h3 class="card-title">Gestión</h3>
+                </div>
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col-md-3">
+                            <br />
+                            <button type="button" id="btnInsertar" class="btn-block btn-lg btn-primary">Insertar</button>
+                        </div>
+                        <div class="col-md-3">
+                            <br />
+                            <button type="button" id="btnActualizar" class="btn-block btn-lg btn-primary">Actualizar</button>
+                        </div>
+                        <div class="col-md-3">
+                            <br />
+                            <button type="button" id="btnEliminar" class="btn-block btn-lg btn-primary">Eliminar</button>
+                        </div>
+                        <div class="col-md-3">
+                            <br />
+                            <button type="button" id="btnConsultar" class="btn-block btn-lg btn-primary">Consultar</button>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
         <div class="card-footer">
@@ -138,15 +158,12 @@
             </div>
             <div class="row">
                 <div class="col-md-12">
-                    <table id="tblVisitas" class="table table-bordered table-striped" style="width:100%;">
+                    <table id="tblServicios" class="table table-bordered table-striped" style="width:100%;">
                         <thead>
                             <tr>
-                                <th>Documento</th>
+                                <th>Código</th>
                                 <th>Nombre</th>
-                                <th>Apellido</th>
-                                <th>Telefono</th>
-                                <th>Correo</th>
-                                <th>Servicio</th>
+                                <th>Costo</th>
                             </tr>
                         </thead>
                     </table>
@@ -154,7 +171,7 @@
             </div>
         </div>
     </form>
-    <!-- Form Visit End -->
+    <!-- Form Empleado End -->
     <!-- Footer Start -->
     <div class="container-fluid bg-dark text-light footer pt-5 mt-5 wow fadeIn" data-wow-delay="0.1s">
         <div class="container py-5">
@@ -220,7 +237,7 @@
     <script src="../Scripts/bootstrap.bundle.min.js"></script>
     <script src="../Scripts/jquery.dataTables.min.js"></script>
     <script src="../Scripts/dataTables.bootstrap4.min.js"></script>
-    <script src="Scripts/Visita.js"></script>
+    <script src="Scripts/Servicio.js"></script>
 </body>
 
 </html>
